@@ -1,14 +1,25 @@
 #include "../include/trigonometricas.h"
 #include <math.h>
-double func(double x){
-    return x;
+double funcFX(double x){
+    double retorno = sin(pow(x,2)+sqrt(x));
+    return retorno;
 }
-double funcSen(double x){
-    return sin(x);
+double funcGX(double x){
+    double tangente = pow(x,2)+sqrt(x+1);
+    tangente = pow(tangente, -1);
+    double retorno = sin(tangente);
+    return retorno;
 }
-double funcCos(double x){
+
+double funcHX(double x){
     return cos(x);
 }
-double funcTg(double x){
+double funcPX(double x){
     return tan(x);
+}
+double funcQX(double x){
+    return x;
+}
+double funcRX(double x){
+
 }

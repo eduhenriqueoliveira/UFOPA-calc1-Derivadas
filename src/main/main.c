@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "../include/derivadas.h"
+#include "../include/trigonometricas.h"
 
 void main(){
-    int i=1;
-    i = derivadaAvancada(i);
-    printf("funciona agora? %d\n", i);
+    int i=0;
+    i = funcGX(i);
+    printf("funciona agoraasdfasdf? %lf\n", i);
 }
 

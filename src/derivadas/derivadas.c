@@ -1,10 +1,5 @@
-#include <stdio.h>
-#define H 0.00001
-
-double func(double x){
-    return x;
-}
-
+#include "../include/derivadas.h"
+#include "../include/trigonometricas.h"
 double derivadaAvancada(double x){
     double funcDeri = (func(x+H)-func(x))/H;
     return funcDeri;
@@ -19,9 +14,3 @@ double derivadaCentrada(double x){
     double funcDeri = (func(x+H) - func(x-H))/(2*H);
     return funcDeri;
 }
-
-void main(){
-    derivadaAvancada(1);
-    printf("funciona agora?\n");
-}
-

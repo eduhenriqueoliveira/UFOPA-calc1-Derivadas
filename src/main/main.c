@@ -3,7 +3,7 @@
 
 void main(){
     int i=1;
-    derivadaAvancada(i);
-    printf("funciona agora?\n");
+    i = derivadaAvancada(i);
+    printf("funciona agora? %d\n", i);
 }
 

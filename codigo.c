@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#define H 0.0001
+//#define H 0.00000000001
 
 double funcFX(double x){
     double retorno = sin(pow(x,2)+sqrt(x));
@@ -31,7 +31,7 @@ double funcRX(double x){
     return (pow(x,2)-x);
 }
 
-double derivadaAvancada(double x, int opc){
+double derivadaAvancada(double x, double H, int opc){
     double funcDeri;
     switch (opc){
         case 1:
@@ -46,7 +46,7 @@ double derivadaAvancada(double x, int opc){
     return funcDeri;
 }
 
-double derivadaRecuada(double x, int opc){
+double derivadaRecuada(double x, double H, int opc){
     double funcDeri; 
     switch (opc){
         case 1:
@@ -59,7 +59,7 @@ double derivadaRecuada(double x, int opc){
     return funcDeri;
 }
 
-double derivadaCentrada(double x, int opc){
+double derivadaCentrada(double x, double H, int opc){
     double funcDeri;
         switch (opc){
         case 1:
@@ -74,19 +74,25 @@ double derivadaCentrada(double x, int opc){
 
 
 void main(){
-    double d=1;
+    double d=1, H=1;
     printf("Valor de entrada: %lf\n", d);
-    printf("Valor da função neste ponto: %lf", funcQX(d));
+    printf("Valor da função neste ponto: %lf\n", funcQX(d));
+    double av, rec, cen; 
+    for(int i=0; i<18; i++){
+        printf("\n**********************************\n");
+        printf("Iteração %d\nValor de H: %0.17lf\n", i+1, H);
+        av=derivadaAvancada(d,H,2);
+        printf("Derivada Avançada %0.13lf\n", av);
 
-    double i = derivadaAvancada(d,2);
-    printf("\nDerivada Avançada %lf\n", i);
+        rec = derivadaRecuada(d,H, 2);
+        printf("Derivada Recuada %0.13lf\n", rec);
 
-    i = derivadaRecuada(d, 2);
-    printf("Derivada Recuada %lf\n", i);
-
-    i = derivadaCentrada(d, 2);
-    printf("Derivada Centrada %0.13lf\n", i);
-    //1.8326571590206,
+        cen = derivadaCentrada(d,H, 2);
+        printf("Derivada Centrada %0.13lf\n", cen);
+        printf("\n**********************************\n");
+        H /=10;
+    }
+    
     
 }
 

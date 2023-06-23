@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-//#define H 0.00000000001
 
 double funcRX(double x){
     double retorno = 1/sin(cos(x+1));

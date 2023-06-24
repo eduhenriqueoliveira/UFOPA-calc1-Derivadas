@@ -33,7 +33,7 @@ void main(){
     double d=0, H=1;
     double av, rec, cen; 
 
-    H=1;
+    H=0.1;
     printf("\nFunção r(x):\n");
     printf("Valor de entrada: %lf\n", d);
     printf("Valor da função neste ponto: %.12lf\n", funcRX(d));
@@ -41,7 +41,7 @@ void main(){
     printf("Valor da função derivada neste ponto: %.12lf\n", RX);
     printf("\n\n");
     printf("Valor da função derivada a partir da definição de limite neste ponto: \n");
-    for(int i=0; i<18; i++){
+    for(int i=0; i<17; i++){
         printf("\n**********************************\n");
         printf("Valor esperado: %.12lf\n", RX);
         printf("Iteração %d\nValor de H: %0.17lf\n", i+1, H);
